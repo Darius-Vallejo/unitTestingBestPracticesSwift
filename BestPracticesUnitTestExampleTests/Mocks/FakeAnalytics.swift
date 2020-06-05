@@ -7,3 +7,13 @@
 //
 
 import Foundation
+@testable import BestPracticesUnitTestExample
+
+class FakeAnalytics: Analytics {
+    
+    var selectedState: StoreType?
+    
+    func logFilterSelected(_ state: StoreType) {
+        self.selectedState = state
+    }
+}

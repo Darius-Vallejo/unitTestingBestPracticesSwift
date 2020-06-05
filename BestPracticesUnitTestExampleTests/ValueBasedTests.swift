@@ -1,5 +1,5 @@
 //
-//  BestPracticesTests.swift
+//  ValueBasedTests.swift
 //  BestPracticesUnitTestExampleTests
 //
 //  Created by dario vallejo on 1/06/20.
@@ -12,26 +12,29 @@ import Foundation
 import XCTest
 @testable import BestPracticesUnitTestExample
 
-class BestPracticesTests: XCTestCase {
+class ValueBasedTests: XCTestCase {
+    
+    var calculator: Calculator!
 
     override func setUp() {
         super.setUp()
-        
+        calculator = Calculator()
     }
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    // MARK: Wrong Nomenclature
+    func testMultiplication() {
+        let a: Float = 0
+        let b: Float = 2
+        let result = calculator.multiplication(a: a, b: b)
+        assert(result == 0)
     }
-
-
     
-    
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    // MARK: Right Nomenclature
+    func testMultiplication_byZero_returnsZero() {
+        let a: Float = 0
+        let b: Float = 2
+        let result = calculator.multiplication(a: a, b: b)
+        XCTAssertEqual(result, 0)
     }
 
 }

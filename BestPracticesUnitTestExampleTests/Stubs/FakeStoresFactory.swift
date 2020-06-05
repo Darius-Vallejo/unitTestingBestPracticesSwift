@@ -7,3 +7,10 @@
 //
 
 import Foundation
+import BestPracticesUnitTestExample
+
+class FakeStoresFactory {
+    var stores: [Store] {
+        return [Store(type: .rest), Store(type: .rest),Store(type: .rest), Store(type: .mark),Store(type: .mark)]
+    }
+}
